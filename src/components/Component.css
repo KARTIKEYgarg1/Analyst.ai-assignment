@@ -1,0 +1,115 @@
+.triangle::before {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: -50px;
+  top: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 100px solid var(--basecolor);
+}
+.triangle {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 40%;
+  height: 100px;
+  background-color: var(--basecolor);
+}
+
+.spinner {
+  width: 80px;
+  height: 80px;
+  margin: auto;
+}
+.spinner:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 6px solid var(--basecolor);
+  border-color: var(--basecolor) transparent var(--basecolor) transparent;
+  animation: spinner 1.2s linear infinite;
+}
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+table {
+  table-layout: fixed;
+  margin-top: 1%;
+  margin-left: 10vw;
+  width: 80vw;
+  border-collapse: separate;
+  border-spacing: 0 1em;
+  background-color: white;
+}
+table td,
+table tr {
+  padding: 30px;
+  transition: 0.1s ease-in;
+}
+.addHoverEffect:hover {
+  color: var(--basecolor);
+  transform: scale(1.1);
+}
+.detailButton {
+  margin-left: 12px;
+  border: 0;
+  background-color: var(--basecolor);
+  border-radius: 25px;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}
+.detailsTab {
+  transition: 1s;
+}
+.detailsTab td {
+  border-radius: 25px;
+  padding: 1px 5%;
+  transition: 1s;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: 40% 60%;
+}
+.pageNav {
+  width: 100%;
+  margin: 3% 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pageNav button {
+  margin: 3px;
+  background-color: rgba(184, 181, 181, 0.15);
+  padding: 15px;
+  cursor: pointer;
+}
+.pageNav button:hover {
+  background-color: var(--basecolor);
+  color: white;
+}
+
+@media screen and (max-width: 600px) {
+  .triangle {
+    display: none;
+  }
+  table {
+    margin-left: 5%;
+    width: 90%;
+  }
+  table td,
+  table tr {
+    padding: 35px;
+    width: max-content;
+  }
+}
